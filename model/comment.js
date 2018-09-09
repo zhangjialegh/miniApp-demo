@@ -1,5 +1,5 @@
 const sequelize = require('./main')
-const Sequelize = require('Sequelize')
+const Sequelize = require('sequelize')
 
 const Comment = sequelize.define('comment', {
   id: {

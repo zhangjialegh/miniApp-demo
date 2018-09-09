@@ -1,5 +1,5 @@
 const sequelize = require('./main')
-const Sequelize = require('Sequelize')
+const Sequelize = require('sequelize')
 
 const Post = sequelize.define('post', {
   id: {
