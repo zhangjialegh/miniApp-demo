@@ -7,22 +7,33 @@ const User = sequelize.define('user', {
     allowNull: false,
     autoIncrement: true
   },
-  name: {
+  wechat_nickname: {
+    type: Sequelize.STRING
+  },
+  wechat_province: {
+    type: Sequelize.STRING
+  },
+  wechat_city: {
+    type: Sequelize.STRING
+  },
+  wechat_country: {
+    type: Sequelize.STRING
+  },
+  wechat_openid: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  pass: {
+  wechat_avatar_uri: {
+    type: Sequelize.STRING,
+  },
+  third_session: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  avator: {
+  scene: {
     type: Sequelize.STRING,
-    allowNull: false
-  },
-  moment: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
+    allowNull: true
+  }
 });
 
 module.exports = User;

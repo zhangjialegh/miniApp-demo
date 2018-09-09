@@ -1,7 +1,7 @@
-mysql -u -p << eof
+mysql -u root -p << eof
 
-create database demosql;
+create database wechatsql character set utf8;
 
-use demosql;
+use wechatsql;
 
 eof

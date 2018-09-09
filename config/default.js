@@ -3,11 +3,17 @@ const config = {
   port: 3000,
   // 数据库配置
   database: {
-    DATABASE: 'demosql',
+    DATABASE: 'wechatsql',
     USERNAME: 'root',
     PASSWORD: 'root',
     PORT: '3306',
     HOST: 'localhost'
+  },
+  wechat: {
+    app_id:'wx377afc7096874b4d',
+    secret_id:'4d2009543f9b262facbed8b57f10cce9',
+    wechat_grant_type:'authorization_code',
+    wechat_code_to_session_url:'https://api.weixin.qq.com/sns/jscode2session'
   }
 }
 
