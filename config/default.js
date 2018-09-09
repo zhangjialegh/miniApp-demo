@@ -1,6 +1,6 @@
 const config = {
   // 启动端口
-  port: 3000,
+  port: 5001,
   // 数据库配置
   database: {
     DATABASE: 'wechatsql',
