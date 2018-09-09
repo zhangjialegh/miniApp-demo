@@ -5,7 +5,7 @@ const config = {
   database: {
     DATABASE: 'wechatsql',
     USERNAME: 'root',
-    PASSWORD: 'root',
+    PASSWORD: 'jiale',
     PORT: '3306',
     HOST: 'localhost'
   },
