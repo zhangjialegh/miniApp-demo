@@ -10,14 +10,14 @@ const views = require('koa-views')
 // const koaStatic = require('koa-static')
 const staticCache = require('koa-static-cache')
 const app = new Koa()
-
+const NODE_ENV = process.env.NODE_ENV === 'dev' ? 'dev' : 'prod'
 
 // session存储配置
 const sessionMysqlConfig= {
-  user: config.database.USERNAME,
-  password: config.database.PASSWORD,
-  database: config.database.DATABASE,
-  host: config.database.HOST,
+  user: config[NODE_ENV].database.USERNAME,
+  password: config[NODE_ENV].database.PASSWORD,
+  database: config[NODE_ENV].database.DATABASE,
+  host: config[NODE_ENV].database.HOST,
 }
 
 // 配置session中间件
@@ -54,8 +54,9 @@ app.use(require('./routers/posts.js').routes())
 app.use(require('./routers/signout.js').routes())
 app.use(require('./routers/wxlogin.js').routes())
 app.use(require('./routers/user.js').routes())
+app.use(require('./routers/address.js').routes())
 
 
-app.listen(config.port)
+app.listen(config[NODE_ENV].port)
 
-console.log(`listening on port ${config.port}`)
+console.log(`listening on port ${config[NODE_ENV].port}`)

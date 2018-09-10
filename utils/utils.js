@@ -6,7 +6,7 @@ var axios = require('axios');
 var config = require('../config/default');
 var WXBizDataCrypt = require('./WXBizDataCrypt')
 var crypto=require("crypto");
-
+const NODE_ENV = process.env.NODE_ENV === 'dev' ? 'dev' : 'prod'
 module.exports = {
     extend: function(target, source, flag) {
         for(var key in source) {
@@ -19,17 +19,17 @@ module.exports = {
     },
     code_to_session: function(cls,code) {
         let querystring = {
-            'appid': config.wechat.app_id,
-            'secret': config.wechat.secret_id,
+            'appid': config[NODE_ENV].wechat.app_id,
+            'secret': config[NODE_ENV].wechat.secret_id,
             'js_code': code,
-            'grant_type': config.wechat.wechat_grant_type
+            'grant_type': config[NODE_ENV].wechat.wechat_grant_type
         }
-       return axios.get(config.wechat.wechat_code_to_session_url,{
+       return axios.get(config[NODE_ENV].wechat.wechat_code_to_session_url,{
             params: querystring
         })
     },
     get_wechat_user_info: function (cls,res) {
-        var appId = config.wechat.app_id
+        var appId = config[NODE_ENV].wechat.app_id
         var sessionKey = res.data.session_key
         var encryptedData = cls.encryptedData
         var iv = cls.iv

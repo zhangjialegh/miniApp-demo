@@ -20,7 +20,9 @@ exports.wxLogin = async ctx => {
               if(result[0]&&result[0].wechat_nickname) {
                 ctx.body = {
                     code: 200,
-                    message: '用户登录成功'
+                    message: '用户登录成功',
+                    third_session: $utils.createToken({openId: openId},3),
+                    id: result[0].id
                   };
               } else if (result[0]) {
                 data['need'] = true
