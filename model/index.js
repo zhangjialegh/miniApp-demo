@@ -1,11 +1,9 @@
 const User = require('./user')
-const Post = require('./post')
-const Comment = require('./comment')
 const Address = require('./address')
+const News = require('./news')
 
 module.exports = {
   User,
-  Post,
-  Comment,
-  Address
+  Address,
+  News
 }

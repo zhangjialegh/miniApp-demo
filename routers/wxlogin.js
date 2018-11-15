@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const controller = require('../controller/wx-login')
+const controller = require('../controller/wxlogin')
 
 router.post('/wechat/login', controller.wxLogin)
 

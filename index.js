@@ -1,11 +1,9 @@
 const Koa = require('koa');
 const path = require('path')
 const bodyParser = require('koa-bodyparser');
-const ejs = require('ejs');
 const session = require('koa-session-minimal');
 const MysqlStore = require('koa-mysql-session');
 const config = require('./config/default.js');
-const router = require('koa-router')
 const views = require('koa-views')
 // const koaStatic = require('koa-static')
 const staticCache = require('koa-static-cache')
@@ -48,13 +46,10 @@ app.use(bodyParser({
 }))
 
 //  路由
-app.use(require('./routers/signin.js').routes())
-app.use(require('./routers/signup.js').routes())
-app.use(require('./routers/posts.js').routes())
-app.use(require('./routers/signout.js').routes())
 app.use(require('./routers/wxlogin.js').routes())
 app.use(require('./routers/user.js').routes())
 app.use(require('./routers/address.js').routes())
+app.use(require('./routers/news.js').routes())
 
 
 app.listen(config[NODE_ENV].port)

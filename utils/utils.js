@@ -37,7 +37,6 @@ module.exports = {
         return data = pc.decryptData(encryptedData, iv)
     },
     createToken:function(obj,timeout){
-        console.log(parseInt(timeout)||0);
         var obj2={
             data:obj,//payload
             created:parseInt(Date.now()/1000),//token生成的时间的，单位秒

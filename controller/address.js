@@ -1,9 +1,8 @@
-const userModel = require('../lib/mysql.js');
+const userModel = require('../lib/user.js');
+const addrssModel = require('../lib/address')
 const $utils = require('../utils/utils')
 
 exports.addressRecord = async ctx => {
-  console.log(ctx.request.body,'requers-wokandao');
-  
     const data = ctx.request.body
     const {authorization} = ctx.request.header
     if(!authorization) {
@@ -17,7 +16,7 @@ exports.addressRecord = async ctx => {
           .then(async (res) => {
             if(res[0]) {
               const User = res[0]
-              await userModel.addressRecord(User,data)
+              await addrssModel.addressRecord(User,data)
                     .then(async (res) => {
                       ctx.body = {
                         code: 200,
