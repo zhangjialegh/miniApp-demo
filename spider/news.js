@@ -14,6 +14,7 @@ const spider = async (lastCursor, pageSize)=> {
      ex.order = item.order
      ex.insert_time = item.updatedAt
      ex.jsonstr = item
+     ex.publish_time = item.publishDate
      return ex
   })
 
@@ -27,14 +28,20 @@ const spider = async (lastCursor, pageSize)=> {
   })
 }
 
+const process = () => {
+  let lastCursor = 1
+  let pageSize = 20
+  while (lastCursor < 2000) {
+    spider(lastCursor, pageSize)
+    lastCursor += pageSize
+  }
+}
+
 exports.newsInsert = () => {
+  process()
   const timer = 1000*60*60
-  setInterval(() => {
-    let lastCursor = 1
-    let pageSize = 20
-    while (lastCursor < 10000000) {
-      spider(lastCursor, pageSize)
-      lastCursor += pageSize
-    }
+  clearInterval(t)
+  const t = setInterval(() => {
+    process()
   }, timer)
 }

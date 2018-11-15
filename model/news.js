@@ -21,6 +21,10 @@ const News = sequelize.define('news', {
   insert_time: {
     type: Sequelize.DATE,
     allowNull: false
+  },
+  publish_time: {
+    type: Sequelize.DATE,
+    allowNull: true
   }
 });
 
