@@ -28,14 +28,13 @@ const spider = async (lastCursor, pageSize)=> {
 }
 
 exports.newsInsert = () => {
-
-  let lastCursor = 1
-
-  let pageSize = 20
-
-  while (lastCursor < 100000) {
-    spider(lastCursor, pageSize)
-    lastCursor += pageSize
-  }
-
+  const timer = 1000*60*60
+  setInterval(() => {
+    let lastCursor = 1
+    let pageSize = 20
+    while (lastCursor < 10000000) {
+      spider(lastCursor, pageSize)
+      lastCursor += pageSize
+    }
+  }, timer)
 }
