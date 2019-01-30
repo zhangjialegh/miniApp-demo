@@ -8,7 +8,7 @@ const config = {
       USERNAME: 'root',
       PASSWORD: 'root',
       PORT: '3306',
-      HOST: 'localhost'
+      HOST: '127.0.0.1'
     },
     wechat: {
       app_id:'wx377afc7096874b4d',
@@ -26,7 +26,7 @@ const config = {
       USERNAME: 'root',
       PASSWORD: 'jiale',
       PORT: '3306',
-      HOST: 'localhost'
+      HOST: '127.0.0.1'
     },
     wechat: {
       app_id:'wx377afc7096874b4d',

@@ -2,7 +2,6 @@ const userModel = require('../lib/user.js');
 const $utils = require('../utils/utils')
 
 exports.wxLogin = async ctx => {
-
   try {
     const res = await $utils.code_to_session(ctx.request.body, ctx.request.body.code)
     const openId = res.data.openid
