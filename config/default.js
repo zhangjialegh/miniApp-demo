@@ -19,7 +19,7 @@ const config = {
   },
   prod: {
     // 启动端口
-    port: 5001,
+    port: 8001,
     // 数据库配置
     database: {
       DATABASE: 'wechatsql',
