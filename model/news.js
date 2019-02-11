@@ -16,7 +16,7 @@ const News = sequelize.define('news', {
   },
   jsonstr: {
     type: Sequelize.JSON,
-    allowNull: true
+    allowNull: false
   },
   insert_time: {
     type: Sequelize.DATE,

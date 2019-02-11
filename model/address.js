@@ -22,19 +22,19 @@ const Address = sequelize.define('address', {
   },
   adInfo: {
     type: Sequelize.JSON,
-    allowNull: true
+    allowNull: false
   },
   addressComponent: {
     type: Sequelize.JSON,
-    allowNull: true
+    allowNull: false
   },
   addressReference: {
     type: Sequelize.JSON,
-    allowNull: true
+    allowNull: false
   },
   formattedAddresses: {
     type: Sequelize.JSON,
-    allowNull: true
+    allowNull: false
   },
   latitude: {
     type: Sequelize.FLOAT,
