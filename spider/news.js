@@ -46,7 +46,7 @@ const process = async () => {
 
 exports.newsInsert = () => {
   process()
-  const timer = 1000*60*1
+  const timer = 1000*60*60*12
   setInterval(() => {
     lastCursor = ''
     process()
